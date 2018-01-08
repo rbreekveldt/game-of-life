@@ -19,8 +19,8 @@
         <thucydides.version>1.8.3</thucydides.version>
         <jelastic.context>gameoflife</jelastic.context>
         <jelastic.environment>wakaleo</jelastic.environment>
-        <!-- Bitbucket -->
-        <project.scm.id>bitbucket</project.scm.id>
+        <!-- Bitbucket 
+        <project.scm.id>bitbucket</project.scm.id> -->
    </properties>
 
        <scm>
