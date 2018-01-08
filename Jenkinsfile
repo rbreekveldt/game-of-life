@@ -1,7 +1,7 @@
 pipeline {
   agent {
     dockerfile {
-      filename '*/gameoflife-web/Dockerfile'
+      filename 'gameoflife-web/Dockerfile'
     }
     
   }
