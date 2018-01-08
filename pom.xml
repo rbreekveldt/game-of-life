@@ -19,14 +19,13 @@
         <thucydides.version>1.8.3</thucydides.version>
         <jelastic.context>gameoflife</jelastic.context>
         <jelastic.environment>wakaleo</jelastic.environment>
-        <!-- Bitbucket 
-        <project.scm.id>bitbucket</project.scm.id> -->
+        
    </properties>
 
        <scm>
         <connection>scm:git:https://rbreekveldt@bitbucket.org/rbreekveldt/game-of-life.git</connection>
         <developerConnection>scm:git:https://rbreekveldt@bitbucket.org/rbreekveldt/game-of-life.git</developerConnection>
-        <url>https://swisse@bitbucket.tmns.com/scm/dp/devops-april2017-gameoflife-sofie.git</url>
+        <url>https://rbreekveldt@bitbucket.org/rbreekveldt/game-of-life.git</url>
         <tag>gameoflife-1.0</tag>
     </scm>
     
