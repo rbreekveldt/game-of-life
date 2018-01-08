@@ -1,7 +1,8 @@
 pipeline {
   agent {
-    dockerfile {
-      filename 'gameoflife-web/Dockerfile'
+    docker {
+      image 'tomcat:8-jre8'
+      args '4000:8080'
     }
     
   }
