@@ -1,0 +1,11 @@
+ec2_keypair: "id_rsa"
+ec2_security_group: "sg-385d7852"
+ec2_instance_type: "t2.micro"
+ec2_image: "ami-06a83869"
+ec2_subnet_id: "subnet-5e5b9423"
+ec2_zone: "eu-central-1b"
+ec2_region: "eu-central-1"
+ec2_tag_Name: "Production-Webserver"
+ec2_tag_Type: "webserver"
+ec2_tag_Environment: "production"
+ec2_volume_size: 1

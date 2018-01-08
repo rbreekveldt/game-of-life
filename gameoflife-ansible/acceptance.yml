@@ -1,0 +1,43 @@
+---
+ - name: Create Acceptance environment
+   hosts: localhost
+   connection: local
+   gather_facts: false
+   user: root
+   pre_tasks:
+    - include_vars: ec2-vars/acceptance.yml
+   roles:
+    - provision-ec2 
+ 
+ - name: Install Docker
+   hosts: launched
+   remote_user: ec2-user   
+   become: True
+   become_user: root
+   become_method: sudo
+   roles:    
+    - docker
+
+ - name: Deploy Game of Life
+   hosts: launched
+   remote_user: ec2-user
+   become: True
+   become_user: root
+   become_method: sudo
+   roles:
+    - Game_of_life-Deploy
+    - Game_of_life-JMeter
+
+ - name: Terminate Acceptance environment
+   hosts: localhost
+   connection: local
+   gather_facts: false
+   user: root
+   pre_tasks:
+    - include_vars: ec2-vars/acceptance.yml
+   roles:
+    - terminate-ec2
+
+
+     
+

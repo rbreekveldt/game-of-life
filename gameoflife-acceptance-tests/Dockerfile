@@ -1,6 +1,6 @@
 FROM selenium/standalone-firefox:latest
 
-ENV MAVEN_VERSION 3.3.3
+ENV MAVEN_VERSION 3.5.0
 ENV DISPLAY :99
 
 USER root

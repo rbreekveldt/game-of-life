@@ -1,0 +1,46 @@
+# Docker container for JMeter
+  - name: make directory for JMeter
+    file:
+      path: /home/ec2-user/testing
+      state: directory
+
+  - name: copy Docker file to aws server
+    copy:
+      src: ../gameoflife-web/src/test/Dockerfile
+      dest: /home/ec2-user/testing/Dockerfile
+
+  - name: build the JMeter image
+    docker_image:
+      name: jmeter
+      tag: latest
+      path: /home/ec2-user/testing
+      state: present
+
+  - name: run JMeter container
+    docker_container:
+      name: jmeter_con
+      image: jmeter:latest
+      published_ports: 60000:8090
+      state: started
+      tty: yes
+      recreate: yes
+
+# Execute JMeter tests
+  - name: copy JMeter tests to aws server
+    copy:
+      src: ../gameoflife-web/src/test/jmeter
+      dest: /home/ec2-user/testing
+
+  - name: copy jmx files into docker container
+    command: docker cp testing/jmeter/gameoflife-100-users.jmx jmeter_con:/tmp/ #kopieren van jmx file in de docker container
+
+  - name: run jmx script
+    command: sudo docker exec -i jmeter_con bash -c 'jmeter -n -t tmp/gameoflife-100-users.jmx -l tmp/gol-100-users-results.jtl'
+
+  - name: copy results to ubuntu
+    command: docker cp jmeter_con:tmp/gol-100-users-results.jtl testing/
+
+  - name: copy jmeter results to workspace
+    fetch:
+      src: testing/gol-100-users-results.jtl
+      dest: ../gameoflife-web/target/gol-100-users-results.jtl
