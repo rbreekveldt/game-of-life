@@ -3,7 +3,10 @@ pipeline {
   stages {
     stage('Deploy') {
       steps {
-        sh 'mvn clean deploy'
+        withMaven(globalMavenSettingsConfig: 'cbe36984-77a3-45e6-945a-b7d24dda9751') {
+          sh 'mvn clean deploy'
+        }
+        
       }
     }
     stage('Build and run unit test') {
