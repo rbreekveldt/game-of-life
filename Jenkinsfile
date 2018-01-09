@@ -26,7 +26,7 @@ pipeline {
     stage('Run integration tests ') {
       steps {
         dir(path: 'gameoflife-ansible/') {
-          ansiblePlaybook(playbook: 'acceptance.yml')
+          ansiblePlaybook(playbook: 'acceptance.yml', extraVars: '/ec2-vars/acceptance.yml')
         }
         
       }
@@ -34,7 +34,7 @@ pipeline {
     stage('Production') {
       steps {
         dir(path: 'gameoflife-ansible/') {
-          ansiblePlaybook(playbook: 'production.yml')
+          ansiblePlaybook(playbook: 'production.yml', extraVars: '/ec2-vars/acceptance.yml')
         }
         
       }
