@@ -1,6 +1,11 @@
 pipeline {
   agent any
   stages {
+    stage('Deploy') {
+      steps {
+        sh 'mvn clean deploy'
+      }
+    }
     stage('Build and run unit test') {
       steps {
         sh 'mvn clean package'
@@ -15,7 +20,7 @@ pipeline {
         
       }
     }
-    stage('Run integration tests') {
+    stage('Run integration tests ') {
       steps {
         dir(path: 'gameoflife-ansible/') {
           sh 'ansible-playbook acceptance.yml'
@@ -23,9 +28,9 @@ pipeline {
         
       }
     }
-    stage('Deploy to production') {
+    stage('Production') {
       steps {
-        dir(path: 'gameoflife-ansible') {
+        dir(path: 'gameoflife-ansible/') {
           sh 'ansible-playbook production.yml'
         }
         
