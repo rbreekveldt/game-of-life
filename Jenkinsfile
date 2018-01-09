@@ -1,11 +1,6 @@
 pipeline {
   agent any
   stages {
-    stage('Initialize') {
-      steps {
-        sh 'mvn clean '
-      }
-    }
     stage('Build and run unit test') {
       steps {
         sh 'mvn clean package'
@@ -31,7 +26,7 @@ pipeline {
     stage('Deploy to production') {
       steps {
         dir(path: 'gameoflife-ansible') {
-          sh 'production.yml'
+          sh 'ansible-playbook production.yml'
         }
         
       }
