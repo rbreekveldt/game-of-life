@@ -5,7 +5,7 @@ pipeline {
       agent any
       steps {
         dir(path: './gameoflife-ansible') {
-          ansiblePlaybook(playbook: 'acceptance.yml', extras: '-vvv', sudo: true)
+          ansiblePlaybook(playbook: 'acceptance.yml')
         }
         
       }
