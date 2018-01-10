@@ -21,3 +21,6 @@
     
   with_items:
     - docker-py
+
+- name: install lxml
+  pip: name=lxml
