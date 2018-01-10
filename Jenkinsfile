@@ -25,7 +25,7 @@ pipeline {
     }
     stage('Run integration tests ') {
       steps {
-        dir(path: 'gameoflife-ansible/') {
+        dir(path: './gameoflife-ansible') {
           ansiblePlaybook(playbook: 'acceptance.yml')
         }
         
