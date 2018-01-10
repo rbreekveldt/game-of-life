@@ -26,7 +26,7 @@ pipeline {
     stage('Run integration tests ') {
       steps {
         dir(path: 'gameoflife-ansible/') {
-          ansiblePlaybook(playbook: 'acceptance.yml', extraVars: 'export ANSIBLE_HOST_KEY_CHECKING=False')
+          ansiblePlaybook(playbook: 'acceptance.yml')
         }
         
       }
@@ -34,7 +34,7 @@ pipeline {
     stage('Production') {
       steps {
         dir(path: 'gameoflife-ansible/') {
-          ansiblePlaybook(playbook: 'production.yml', extraVars: 'export ANSIBLE_HOST_KEY_CHECKING=False')
+          ansiblePlaybook(playbook: 'production.yml')
         }
         
       }
