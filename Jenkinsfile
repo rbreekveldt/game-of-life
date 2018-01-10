@@ -1,16 +1,13 @@
 pipeline {
   agent any
   stages {
-    stage('Run integration tests ') {
-      agent any
-      steps {
-        ansiblePlaybook(playbook: './gameoflife-ansible/acceptance.yml')
-      }
-    }
     stage('Production') {
       steps {
+        sh 'ls'
+        sh 'pwd'
         dir(path: './gameoflife-ansible') {
-          ansiblePlaybook(playbook: 'production.yml')
+          sh 'ls'
+          sh 'pwd'
         }
         
       }
