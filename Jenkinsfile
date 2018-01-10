@@ -5,7 +5,7 @@ pipeline {
       agent any
       steps {
         dir(path: './gameoflife-ansible') {
-          ansiblePlaybook(playbook: 'acceptance.yml', extras: '-vvv', extraVars: '"export ANSIBLE_HOST_KEY_CHECKING=False"')
+          ansiblePlaybook(playbook: 'acceptance.yml', extras: '-vvv')
         }
         
       }
