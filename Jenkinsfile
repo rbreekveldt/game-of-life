@@ -4,7 +4,7 @@ pipeline {
     stage('Run integration tests ') {
       steps {
         dir(path: './gameoflife-ansible') {
-          ansiblePlaybook(playbook: 'acceptance.yml', extras: '-vvv')
+          ansiblePlaybook(playbook: './gameoflife-ansible/acceptance.yml', extras: '-vvv')
         }
         
       }
