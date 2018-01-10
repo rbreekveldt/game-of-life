@@ -4,10 +4,7 @@ pipeline {
     stage('Run integration tests ') {
       agent any
       steps {
-        dir(path: './gameoflife-ansible') {
-          ansiblePlaybook(playbook: 'acceptance.yml')
-        }
-        
+        ansiblePlaybook(playbook: './gameoflife-ansible/acceptance.yml')
       }
     }
     stage('Production') {
