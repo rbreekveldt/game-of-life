@@ -2,15 +2,10 @@ pipeline {
   agent any
   stages {
     stage('Run integration tests ') {
-      agent {
-        node {
-          label 'ansiblePlaybook'
-        }
-        
-      }
+      agent any
       steps {
         dir(path: './gameoflife-ansible') {
-          ansiblePlaybook(playbook: 'acceptance.yml', extras: '-vvv')
+          ansiblePlaybook(playbook: 'acceptance.yml', extras: '-vvv', extraVars: '"export ANSIBLE_HOST_KEY_CHECKING=False"')
         }
         
       }
