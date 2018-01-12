@@ -18,22 +18,21 @@
    roles:    
     - docker
 
- - name: Deploy Game of Life
+ - name: Deploy and Run JMeter
    hosts: launched
    remote_user: ec2-user
    become: True
    become_user: root
    become_method: sudo
    roles:
-    - Game_of_life-Deploy
     - Game_of_life-JMeter
 
- - name: Terminate instances
+ - name: Terminate acceptance environment
    hosts: localhost
    connection: local
    tasks:
-    - name: Terminate instances that were previously launched
-      ec2:
-        state: 'absent'
-        instance_ids: '{{ ec2.instance_ids }}'   
-
+     - name: Terminate instances that were previously launched
+       ec2:
+         state: 'absent'
+         instance_ids: '{{ ec2.instance_ids }}'
+         region: '{{ ec2_region }}'
