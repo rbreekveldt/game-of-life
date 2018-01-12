@@ -27,8 +27,8 @@
 
        <scm>
         <url>https://bitbucket.org/rbreekveldt/game-of-life.git</url>
-        <connection>scm:git:https://rbreekveldt@tmns.com:pQtI4F!1@bitbucket.org/rbreekveldt/game-of-life.git</connection>
-        <developerConnection>scm:git:https://rbreekveldt@tmns.com:pQtI4F!1@bitbucket.org/rbreekveldt/game-of-life.git</developerConnection>
+        <connection>scm:git:https://bitbucket.org/rbreekveldt/game-of-life.git</connection>
+        <developerConnection>scm:git:https://bitbucket.org/rbreekveldt/game-of-life.git</developerConnection>
         <tag>gameoflife-1.0</tag>
        </scm>
     
