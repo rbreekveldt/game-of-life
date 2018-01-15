@@ -27,8 +27,8 @@
 
        <scm>
         <url>https://rbreekveldt@bitbucket.org/rbreekveldt/game-of-life.git</url>
-        <connection>scm:git:ssh://git@bitbucket.org:rbreekveldt/game-of-life.git</connection>
-        <developerConnection>scm:git:ssh://git@bitbucket.org:rbreekveldt/game-of-life.git</developerConnection>
+        <connection>scm:git:https://rbreekveldt@bitbucket.org/rbreekveldt/game-of-life.git</connection>
+        <developerConnection>scm:git:https://rbreekveldt@bitbucket.org/rbreekveldt/game-of-life.git</developerConnection>
         <tag>gameoflife-1.0</tag>
        </scm>
     
@@ -121,7 +121,9 @@
                 <artifactId>maven-release-plugin</artifactId>
                 <version>2.5.3</version>
                 <configuration>
-                    <preparationGoals>clean install</preparationGoals>
+                 <localCheckout>true</localCheckout>
+                 <pushChanges>false</pushChanges>   
+                 <preparationGoals>clean install</preparationGoals>
                 </configuration>
             </plugin>
 
