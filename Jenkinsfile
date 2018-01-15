@@ -6,7 +6,7 @@ pipeline {
         dir(path: './gameoflife-ansible') {
           sh 'ls'
           sh 'pwd'
-          ansiblePlaybook(playbook: 'acceptance.yml')
+          ansiblePlaybook(playbook: 'production.yml')
         }
         
       }
