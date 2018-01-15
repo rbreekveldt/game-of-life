@@ -20,10 +20,7 @@
         <jelastic.context>gameoflife</jelastic.context>
         <jelastic.environment>wakaleo</jelastic.environment>
         
-        <!-- Bitbucket -->
-        <project.scm.id>bitbucket</project.scm.id>
-
-   </properties>
+    </properties>
 
        <scm>
         <url>https://bitbucket.org/rbreekveldt/game-of-life.git</url>
