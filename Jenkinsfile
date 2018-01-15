@@ -6,7 +6,7 @@ pipeline {
         dir(path: './gameoflife-ansible') {
           sh 'ls'
           sh 'pwd'
-          ansiblePlaybook(playbook: 'production.yml', installation: '/usr/local/bin/')
+          ansiblePlaybook(playbook: 'production.yml', installation: '*/usr/local/bin/')
         }
         
       }
