@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.wakaleo.gameoflife</groupId>
     <artifactId>gameoflife</artifactId>
-    <version>1.17-SNAPSHOT</version>
+    <version>1.17</version>
     <packaging>pom</packaging>
     <name>gameoflife</name>
     <url>https://github.com/wakaleo/game-of-life</url>
@@ -29,7 +29,7 @@
         <connection>scm:git:ssh://git@bitbucket.org/rbreekveldt/game-of-life.git</connection>
         <developerConnection>scm:git:ssh://git@bitbucket.org/rbreekveldt/game-of-life.git</developerConnection>
         <url>https://bitbucket.org/rbreekveldt/game-of-life.git</url>
-        <tag>gameoflife-1.0</tag>
+        <tag>gameoflife-1.17</tag>
        </scm>
     
     <distributionManagement>
