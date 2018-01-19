@@ -9,7 +9,7 @@
 - name: Start docker
   service:
     name: docker
-    state: running
+    state: started
 
 - name: Install pypi
   easy_install: name=pip
