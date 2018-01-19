@@ -4,7 +4,7 @@ pipeline {
     stage('Production') {
       steps {
         dir(path: './gameoflife-ansible') {
-          ansiblePlaybook '*/gameoflife-ansible/production.yml'
+          ansiblePlaybook '/usr/local/bin/ansible-playbook'
         }
         
       }
