@@ -5,6 +5,7 @@ pipeline {
       steps {
         dir(path: 'gameoflife-ansible') {
           fileExists 'production.yml'
+          ansiblePlaybook 'production.yml'
         }
         
       }
