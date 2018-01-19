@@ -3,8 +3,8 @@ pipeline {
   stages {
     stage('Production') {
       steps {
-        dir(path: '/usr/local/bin/') {
-          ansiblePlaybook './gameoflife-ansible/production.yml'
+        dir(path: 'gameoflife-ansible') {
+          fileExists 'production.yml'
         }
         
       }
